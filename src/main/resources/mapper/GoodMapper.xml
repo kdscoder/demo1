@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo1.mapper.GoodMapper">
+    <resultMap id="goods" type="com.example.demo1.vo.Good">
+        <id column="id" property="id"/>
+        <result column="deadline" property="deadline"/>
+        <result column="numbers" property="numbers"/>
+        <result column="good_name" property="good_name"/>
+    </resultMap>
+    <select id="selectAllGoods" resultMap="goods">
+        select * from goods
+    </select>
+    <insert id="addGood" parameterType="com.example.demo1.vo.Good">
+        insert into goods(deadline, numbers, good_name)
+        values(#{deadline},#{numbers},#{good_name})
+    </insert>
+</mapper>

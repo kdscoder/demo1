@@ -1,0 +1,17 @@
+server:
+  port: 80
+# 数据库配置
+spring:
+  datasource:
+    url: jdbc:mysql://47.108.217.237:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=CST&useSSL=true
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#MyBatis的相关配置
+mybatis:
+  #Mapper映射XML文件
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.example.**.mapper
